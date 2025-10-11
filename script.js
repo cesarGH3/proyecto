@@ -22,3 +22,12 @@ document.querySelectorAll('nav ul li a').forEach(link => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("header nav ul");
+
+    toggle.addEventListener("click", () => {
+        menu.classList.toggle("show");
+    });
+});

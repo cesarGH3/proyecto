@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantilla Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -13,14 +14,16 @@
     <header>
         <!-- <h1>Explora la Elegancia</h1> -->
         <nav>
-            <div><img src="Logo.jpg" alt="Logo" width="100px"></div>
+            <div id="TituloLogo"><h1>APOCALIPTO</h1></div>
+            <button id="menu-toggle" class="menu-toggle">☰</button>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#precios">Precios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a class="navSections" href="#inicio">Inicio</a></li>
+                <li><a class="navSections" href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a class="navSections" href="#servicios">Servicios</a></li>
+                <li><a class="navSections" href="#precios">Precios</a></li>
+                <li><a class="navSections" href="#contacto">Contacto</a></li>
             </ul>
+            
         </nav>
     </header>
 
@@ -123,7 +126,7 @@
 
             <div class="planes">
                 <div class="precios">
-                    <img src="plan2.jpg" alt="Imagen" width="150px">
+                    <img src="plan1.jpg" alt="Imagen" width="150px">
                     <h3>Plan Base</h3>
                     <h4>$150.000 COP</h4>
                     <p>
@@ -139,7 +142,7 @@
                 </div>
 
                 <div class="precios">
-                    <img src="plan1.jpg" alt="Imagen" width="200px">
+                    <img src="plan2.jpg" alt="Imagen" width="200px">
                     <h3>Plan Intermedio</h3>
                     <h4>$300.000 COP</h4>
                     <p>
@@ -173,22 +176,24 @@
         </section>
 
         <section id="contacto">
+            <div class="superContacto">
+                <div class="form-container">
+                    <h2>Contáctanos</h2>
+                    <form action="#" method="post">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                        <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
 
-            <div class="form-container">
-                <h2>Contáctanos</h2>
-                <form action="#" method="post">
-                    <input type="text" name="nombre" placeholder="Nombre completo" required>
-                    <input type="email" name="email" placeholder="Correo electrónico" required>
-                    <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-
-            <div class="mapa">
-                <iframe width="1000" height="800" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=es&amp;q=Ibagu%C3%A9,%20Colombia,%20Urbanizacion%20Vasconia+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                    <a href="https://www.mapsdirections.info/calcular-la-poblacion-en-un-mapa/">Mapa de población</a>
-                </iframe>
+                <div class="mapa">
+                    <iframe width="1000" height="800" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=es&amp;q=Ibagu%C3%A9,%20Colombia,%20Urbanizacion%20Vasconia+(Mi%20nombre%20de%20egocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                        <a href="https://www.mapsdirections.info/calcular-la-poblacion-en-un-mapa/">Mapa de
+                            población</a>
+                    </iframe>
+                </div>
             </div>
 
         </section>

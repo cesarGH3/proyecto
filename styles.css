@@ -8,63 +8,125 @@
 
 /* Estilo global para el cuerpo del documento */
 body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;/* Define la fuente principal del sitio. */
-    color: black; /* Establece el color del texto en blanco. */
-    line-height: 1.6; /* Mejora la legibilidad al establecer la altura de línea. */
-    background-color: #EFD5F2;
-}
-
-nav {
-    display: flex ;
-    margin-top: 8px;
-    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    /* Define la fuente principal del sitio. */
+    color: white;
+    /* Establece el color del texto en blanco. */
+    line-height: 1.6;
+    /* Mejora la legibilidad al establecer la altura de línea. */
+    background-color: black;
 }
 
 /* Estilo del encabezado */
 header {
-    position: fixed; /* Hace que el encabezado permanezca visible al hacer scroll. */
-    top: 0; /* Lo posiciona en la parte superior de la página. */
-    width: 100%; /* Abarca todo el ancho de la ventana. */
-    background-color: #B78DF2; /* Fondo semitransparente para contraste. */
-    padding: 10px 20px; /* Espaciado interno para los elementos del encabezado. */
-    display: flex; /* Utiliza diseño flexible para organizar los elementos horizontalmente. */
-    justify-content: space-between; /* Distribuye los elementos en extremos opuestos. */
-    align-items: center; /* Alinea verticalmente los elementos del encabezado. */
-    z-index: 1000; /* Asegura que el encabezado esté siempre encima de otros elementos. */
+    position: fixed;
+    /* Hace que el encabezado permanezca visible al hacer scroll. */
+    top: 0;
+    /* Lo posiciona en la parte superior de la página. */
+    width: 100%;
+    /* Abarca todo el ancho de la ventana. */
+    background-color: #000000;
+    /* Fondo semitransparente para contraste. */
+    padding: 10px 20px;
+    /* Espaciado interno para los elementos del encabezado. */
+    display: flex;
+    /* Utiliza diseño flexible para organizar los elementos horizontalmente. */
+    justify-content: space-between;
+    /* Distribuye los elementos en extremos opuestos. */
+    align-items: center;
+    /* Alinea verticalmente los elementos del encabezado. */
+    z-index: 1000;
+    /* Asegura que el encabezado esté siempre encima de otros elementos. */
+    border-bottom: 1px solid #5b5b5b;
+
 }
 
-/* Estilo del título en el encabezado */
-header h1 {
-    font-size: 1.8em;
-    /* Tamaño del texto del título. */
-    color: #00bfff;
-    /* Azul claro para resaltar el título. */
+nav {
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#TituloLogo {
+    font-family: 'VT323', monospace;
+    color: #43cd76;
+    font-size: small;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-left: 5px;
+    /*Espaceado entre letras*/
+
+}
+
+#TituloLogo:hover {
+    text-shadow: 0 0 10px #43cd76, 0 0 20px #43cd76;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 /* Navegación dentro del encabezado */
 header nav ul {
-    list-style: none; /* Elimina los puntos de lista predeterminados. */
-    display: flex; /* Muestra los elementos de la lista en una fila. */
-    gap: 2em; /* Espaciado entre los elementos de la lista. */
+    list-style: none;
+    /* Elimina los puntos de lista predeterminados. */
+    display: flex;
+    /* Muestra los elementos de la lista en una fila. */
+    gap: 2em;
+    /* Espaciado entre los elementos de la lista. */
     margin-top: 0.4rem;
-    margin-left: 15px;
+    margin-right: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Estilo de los enlaces de la barra de navegación */
-header nav ul li a {
-    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces. */
-    color: black; /* Color de texto blanco. */
-    font-weight: bold; /* Resalta los enlaces con texto en negrita. */
-    padding: 5px 10px; /* Espaciado interno en los enlaces. */
-    border-radius: 4px; /* Bordes redondeados para los enlaces. */
-    transition: background-color 0.7s; /* Suaviza el cambio de color de fondo (opcional). */
+.navSections {
+    text-decoration: none;
+    /* Elimina el subrayado predeterminado de los enlaces. */
+    color: white;
+    /* Color de texto blanco. */
+    font-weight: bold;
+    /* Resalta los enlaces con texto en negrita. */
+    padding: 5px 10px;
+    /* Espaciado interno en los enlaces. */
+    border-radius: 4px;
+    /* Bordes redondeados para los enlaces. */
+    transition: background-color 0.7s;
+    /* Suaviza el cambio de color de fondo (opcional). */
+    position: relative;
+    /* Necesario para que el ::after se posicione correctamente */
 }
 
-/* Efecto al pasar el cursor sobre los enlaces */
-header nav ul li a:hover {
-    color: #000; /* Cambia el color del texto a negro. */
-    background-color: #935fdb ;
+.navSections:hover {
+    color: #43cd76;
 }
+
+.navSections::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #43cd76;
+    transition: width 0.7s ease;
+}
+
+.navSections:hover::after {
+    width: 100%;
+}
+
 
 /* Espaciado superior para evitar solapamiento con el encabezado fijo */
 main {
@@ -76,14 +138,17 @@ main {
 section {
     min-height: 100vh;
     /* Cada sección ocupa al menos el 100% de la altura de la ventana. */
+    min-width: 100%;
     padding: 60px 20px;
     /* Espaciado interno para el contenido. */
     text-align: center;
     /* Centra el texto. */
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgb(55, 49, 49);
     /* Fondo semitransparente para legibilidad. */
     margin-bottom: 20px;
     /* Espaciado entre secciones. */
+    justify-content: center;
+    border: solid 5px #022601;
 }
 
 /* Títulos dentro de las secciones */
@@ -92,25 +157,161 @@ section h2 {
     /* Tamaño grande para destacar títulos. */
     margin-bottom: 20px;
     /* Espaciado inferior para separación del texto. */
-    color: #00bfff;
+    color: black;
     /* Azul claro para los títulos. */
 }
 
 /* Texto y listas dentro de las secciones */
-section p,
-section ul {
-    font-size: 1.2em;
-    /* Tamaño más grande para mejorar legibilidad. */
-    margin: 10px 0;
-    /* Espaciado superior e inferior. */
+/*section p, section ul {*/
+/*     font-size: 1.2em;  Tamaño más grande para mejorar legibilidad. */
+/*     margin: 10px 0;  Espaciado superior e inferior. */
+/*}*/
+
+
+#inicio {
+    display: flex;
+    overflow: auto;
+
+}
+
+#inicio h2 {
+    font-size: 4em;
+    margin-top: 120px;
+
+}
+
+#inicio h3 {
+    color: #43cd76;
+    font-size: 2em;
+    padding-bottom: 20px;
+}
+
+.inicio img {
+    min-width: 40%;
+}
+
+.inicio {
+    margin: 50px 0px;
+}
+
+
+#sobre-nosotros {
+    display: flex;
+    overflow: auto;
+}
+
+.nosotros img {
+    object-fit: contain;
+}
+
+.nosotros {
+    margin: 50px 50px 34px;
+}
+
+.nosotros h2 {
+    margin-top: 150px;
+    font-size: 3em;
+    color: #43cd76;
+}
+
+#servicios {
+    overflow: auto;
+}
+
+#servicios div {
+    border-radius: 10px;
+
+}
+
+
+#servicios div img {
+    max-width: 100%;
+    object-fit: contain;
+
+
+}
+
+
+.servicios2 {
+    display: flex;
+}
+
+.tarjetas div {
+    max-width: 50%;
+
+}
+
+.tarjetas {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cccccc7e;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    margin: 15px;
+    border: solid 5px #022601;
+    background: #10AC6B;
+}
+
+#precios {
+    overflow: auto;
+}
+
+.precios {
+    margin: 30px;
+    min-width: 30%;
+    min-height: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 5px solid #022601;
+    background-color: #10AC6B;
+    padding: 15px;
+
+
+}
+
+.precios h3 {
+    margin-top: 10px;
+
+}
+
+.precios img {
+    margin-top: 80px;
+    min-width: 170px;
+
+}
+
+
+
+.planes {
+    display: flex;
+}
+
+#contacto {
+    display: flex;
+    background: url('Contacto.jpg');
+    overflow: auto;
+    flex-wrap: wrap;
+}
+
+.superContacto {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+
 }
 
 /* Contenedor del formulario */
 .form-container {
+    /* margin: 180px 80px 30px; */
     width: 100%;
     /* Ocupa el 100% del ancho disponible. */
-    max-width: 400px;
+    max-width: 500px;
     /* Limita el ancho máximo del formulario. */
+    max-height: 450px;
     background-color: #ffffff;
     /* Fondo blanco para contraste. */
     padding: 20px;
@@ -119,16 +320,36 @@ section ul {
     /* Bordes redondeados para un diseño más agradable. */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Sombra para dar profundidad. */
+
+
+}
+
+.mapa {
+    margin-top: 30px;
+    /* margin-left: 100px; */
+    max-width: 500px;
+    max-height: 450px;
+    background-color: aqua;
+}
+
+.mapa iframe {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Título del formulario */
 .form-container h2 {
     text-align: center;
     /* Centra el texto del título. */
-    color: #004a8f;
+    color: #02733E;
     /* Azul oscuro para resaltar. */
     margin-bottom: 20px;
     /* Espaciado inferior para separar del formulario. */
+
 }
 
 /* Campos del formulario */
@@ -154,7 +375,7 @@ section ul {
     /* Ocupa todo el ancho disponible. */
     padding: 10px;
     /* Espaciado interno. */
-    background-color: #004a8f;
+    background-color: #02733E;
     /* Fondo azul oscuro. */
     color: #ffffff;
     /* Texto blanco. */
@@ -172,7 +393,7 @@ section ul {
 
 /* Efecto al pasar el cursor sobre el botón */
 .form-container button:hover {
-    background-color: #00376b;
+    background-color: #43cd76;
     /* Azul más oscuro al pasar el cursor. */
 }
 
@@ -182,7 +403,7 @@ footer {
     /* Centra el texto. */
     padding: 20px;
     /* Espaciado interno. */
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #02733E;
     /* Fondo semitransparente. */
     position: relative;
     /* Permite posicionarlo según el flujo normal del documento. */
@@ -190,47 +411,136 @@ footer {
     /* Texto blanco. */
     font-size: 0.9em;
     /* Texto más pequeño para el pie. */
+    border: solid 5px #022601;
 }
 
 /* ========================
-   Diseño responsive
+    Diseño responsive
    ======================== */
 
 /* Para tablets y pantallas medianas */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5em;
-        /* Reduce el tamaño del título en tablets y pantallas medianas. */
+    .menu-toggle {
+        display: block;
+        /* Muestra el botón ☰ */
+        margin-bottom: 10px;
+        font-size: 2rem;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
     }
 
     header nav ul {
+        display: none;
         flex-direction: column;
-        /* Apila los enlaces del menú verticalmente en lugar de en una fila. */
-        gap: 10px;
-        /* Disminuye el espacio entre enlaces para ajustarse mejor al tamaño de pantalla. */
+        width: 100%;
+        /* ✅ Ocupa todo el ancho */
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 20px 0;
+        text-align: center;
+        gap: 1em;
+        position: relative;
+        /* ✅ Ya no es absolute, así no tapa el botón */
+        z-index: 1000;
     }
 
-    section h2 {
-        font-size: 2em;
-        /* Reduce ligeramente el tamaño de los títulos en secciones para mejor legibilidad. */
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
     }
+
+    #TituloLogo {
+        text-align: center;
+        /* ✅ Centra el título */
+        margin-bottom: 10px;
+    }
+
+    .navSections {
+        font-size: medium;
+    }
+
+    header nav ul.show {
+        display: flex;
+        /* Se muestra cuando se activa */
+    }
+
 }
 
 /* Para móviles y pantallas pequeñas */
 @media (max-width: 480px) {
-    header {
-        padding: 10px;
-        /* Reduce el espacio interno del encabezado para optimizar el espacio disponible. */
+
+    #inicio {
+        flex-wrap: wrap;
     }
 
-    header h1 {
-        font-size: 1.2em;
-        /* Reduce el tamaño del título aún más para pantallas más pequeñas. */
+    #inicio h2 {
+        font-size: 2em;
+        margin: 2%;
     }
 
-    section {
-        padding: 40px 10px;
-        /* Ajusta el relleno de las secciones para aprovechar mejor el espacio. */
+    #inicio h3 {
+        font-size: 1em;
+    }
+
+    .inicio img {
+        max-width: 100%;
+    }
+
+    .inicio {
+        margin: 0 0;
+    }
+
+    #sobre-nosotros {
+        flex-wrap: wrap;
+    }
+
+    .nosotros img {
+        max-width: 100%;
+    }
+
+    .tarjetas div {
+        min-width: 100%;
+    }
+
+    .tarjetas {
+        min-width: 100%;
+        flex-wrap: wrap;
+        margin: 15px 0;
+    }
+
+    .servicios2 {
+        flex-wrap: wrap;
+    }
+
+    .planes {
+        flex-wrap: wrap;
+    }
+
+    .precios {
+        margin: 10px;
+    }
+
+    .precios img {
+        max-width: 70px;
+        margin-top: 0;
+    }
+
+    #contacto {
+        flex-wrap: wrap;
+    }
+
+    .mapa {
+        margin: 0px;
+        max-height: none;
+    }
+
+
+    .mapa iframe {
+        max-width: 300px;
+        max-height: 50%;
     }
 
     .form-container {
@@ -238,6 +548,7 @@ footer {
         /* Disminuye el espacio interno del formulario para que sea más compacto en móviles. */
         max-width: 100%;
         /* Asegura que el formulario ocupe todo el ancho de la pantalla en móviles. */
+        margin: 20px 0;
     }
 
     footer {
