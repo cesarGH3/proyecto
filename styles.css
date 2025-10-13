@@ -269,22 +269,92 @@ p {
 
 #sobre-nosotros {
     display: flex;
-    overflow: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 50px;
+    gap: 60px;
 }
 
-.nosotros img {
-    object-fit: contain;
-}
-
+/* Div Nosotros (Parro e imagen) */
 .nosotros {
-    margin: 50px 50px 34px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 50%;
+    min-height: 100%;
+    padding: 30px;
+    padding-bottom: 55px;
+    transition: all 0.4s ease-in-out;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.nosotros h2 {
-    margin-top: 150px;
-    font-size: 3em;
-    color: #43cd76;
+#contenedorImagenAvance {
+    display: flex;
+    margin-top: 30px;
+    border: solid 5px #000000;
+    box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
+    max-width: 90%;
+    overflow: hidden;   /* evita que algo se salga */
+    transition: all 0.4s ease-in-out;
+   
 }
+
+#imagenAvance {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#sobre-nosotros:hover #contenedorImagenAvance { 
+    border: solid 5px #43cd76;
+    box-shadow: 0 0 25px rgba(67, 205, 118, 0.7);
+}
+
+
+
+/* Div Imagen de sobre nosotros */
+#contenedorImagenNosotros {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+#imagenNosotros {
+    width: 100%;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+    /* duración y tipo de transición */
+    border: solid 5px #000000;
+    box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
+}
+
+#sobre-nosotros:hover #imagenNosotros {
+    border: solid 5px #43cd76;
+    box-shadow: 0 0 25px rgba(67, 205, 118, 0.7);
+}
+
+/* Animaciones */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* AQUI */
+
 
 #servicios {
     overflow: auto;
