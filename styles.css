@@ -50,20 +50,18 @@ nav {
     flex-wrap: wrap;
 }
 
-#TituloLogo {
+#TituloLogo h1 {
     font-family: 'VT323', monospace;
     color: #43cd76;
-    font-size: small;
+    font-size: x-large;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-left: 5px;
-    /*Espaceado entre letras*/
-
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-#TituloLogo:hover {
+#TituloLogo:hover h1 {
     text-shadow: 0 0 10px #43cd76, 0 0 20px #43cd76;
-    color: white;
     cursor: pointer;
 }
 
@@ -139,16 +137,15 @@ section {
     min-height: 100vh;
     /* Cada sección ocupa al menos el 100% de la altura de la ventana. */
     min-width: 100%;
-    padding: 60px 20px;
+    padding: 60px 60px;
     /* Espaciado interno para el contenido. */
     text-align: center;
     /* Centra el texto. */
-    background-color: rgb(55, 49, 49);
+    background-color: rgb(35, 35, 35);
     /* Fondo semitransparente para legibilidad. */
     margin-bottom: 20px;
     /* Espaciado entre secciones. */
     justify-content: center;
-    border: solid 5px #022601;
 }
 
 /* Títulos dentro de las secciones */
@@ -157,26 +154,19 @@ section h2 {
     /* Tamaño grande para destacar títulos. */
     margin-bottom: 20px;
     /* Espaciado inferior para separación del texto. */
-    color: black;
-    /* Azul claro para los títulos. */
 }
-
-/* Texto y listas dentro de las secciones */
-/*section p, section ul {*/
-/*     font-size: 1.2em;  Tamaño más grande para mejorar legibilidad. */
-/*     margin: 10px 0;  Espaciado superior e inferior. */
-/*}*/
-
 
 #inicio {
     display: flex;
     overflow: auto;
-
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 #inicio h2 {
     font-size: 4em;
-    margin-top: 120px;
+    margin-top: 20px;
+    color: white;
 
 }
 
@@ -186,14 +176,96 @@ section h2 {
     padding-bottom: 20px;
 }
 
-.inicio img {
-    min-width: 40%;
+.inicio h3 {
+    background: linear-gradient(90deg, #ffffff, #43cd76);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inicio h3,
+.inicio p {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animación del h3 */
+.mostrar-h3 {
+    animation: aparecerSuave 1.5s ease forwards;
+}
+
+/* Animación del párrafo */
+.mostrar-p {
+    animation: aparecerSuave 2s ease forwards;
+}
+
+
+@keyframes aparecerSuave {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .inicio {
-    margin: 50px 0px;
+    padding: 50px;
 }
 
+
+p {
+    text-align: justify;
+}
+
+.contenedorImagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 45%;
+}
+
+.ImagenInicio {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    min-width: 50%;
+    transition: all 0.4s ease-in-out;
+    /* duración y tipo de transición */
+    border: solid 5px #000000;
+    box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
+
+    /* animación */
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.mostrar-img {
+    animation: aparecerSuaveImagen 1.5s ease forwards;
+}
+
+@keyframes aparecerSuaveImagen {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#inicio:hover .contenedorImagen .ImagenInicio {
+    border: solid 5px #43cd76;
+    box-shadow: 0 0 25px rgba(67, 205, 118, 0.7);
+}
+
+/* AQUI */
 
 #sobre-nosotros {
     display: flex;
@@ -270,6 +342,7 @@ section h2 {
 
 
 }
+
 
 .precios h3 {
     margin-top: 10px;
