@@ -366,33 +366,60 @@ p {
 
 /* AQUI */
 
-#precios {
+#avances {
     overflow: auto;
 }
 
-.precios {
+#contenedorSuperiorAvances {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contendorImagenAvances{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 180px;
+    height: 150px;
+    border-radius: 10px;
+    border: solid 5px #000000;
+    box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+.contendorImagenAvances img{
+    width: 100%;
+    height: 100%;
+    display: block; 
+    object-fit: cover; /* 🔹 Llena todo el contenedor sin deformarse */
+}
+
+.avances {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 30px;
     min-width: 30%;
-    min-height: 800px;
+    width: 30%;
+    min-height: 600px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 5px solid #022601;
-    background-color: #10AC6B;
+
+    box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
+    border: 5px solid #000000;
+    background-color: #5b5b5b;
     padding: 15px;
-
-
+    transition: all 0.4s ease-in-out;
 }
 
 
-.precios h3 {
-    margin-top: 10px;
-
-}
-
-.precios img {
-    margin-top: 80px;
-    min-width: 170px;
-
+.avances h3 {
+    margin-top: 50px;
 }
 
 
@@ -400,6 +427,9 @@ p {
 .planes {
     display: flex;
 }
+
+
+/* AQUI */
 
 #contacto {
     display: flex;
@@ -632,11 +662,11 @@ footer {
         flex-wrap: wrap;
     }
 
-    .precios {
+    .avances {
         margin: 10px;
     }
 
-    .precios img {
+    .avances img {
         max-width: 70px;
         margin-top: 0;
     }
