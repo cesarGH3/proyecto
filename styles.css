@@ -197,6 +197,11 @@ p {
     justify-content: center;
     align-items: center;
     min-width: 45%;
+    transition: all 0.4s ease-in-out;
+}
+.contenedorImagen:hover {
+    cursor: pointer;
+    transform: translateY(-10px); /* Efecto de flotación */
 }
 
 .ImagenInicio {
@@ -253,6 +258,11 @@ p {
     transition: all 0.4s ease-in-out;
 }
 
+#contenedorImagenAvance:hover {
+    cursor: pointer;
+    transform: translateY(-10px); /* Efecto de flotación */
+}
+
 #imagenAvance {
     width: 100%;
     display: block;
@@ -274,6 +284,12 @@ p {
     justify-content: center;
     align-items: center;
     min-height: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+#contenedorImagenNosotros:hover {
+    cursor: pointer;
+    transform: translateY(-10px); /* Efecto de flotación */
 }
 
 #imagenNosotros {
@@ -284,6 +300,7 @@ p {
     border: solid 5px #000000;
     box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
 }
+
 
 #sobre-nosotros:hover #imagenNosotros {
     border: solid 5px #43cd76;
@@ -347,6 +364,7 @@ p {
     border: solid 5px #43cd76;
     box-shadow: 0 0 25px rgba(67, 205, 118, 0.7);
     background-color: #000;
+    transform: translateY(-5px); /* Efecto de flotación */
 }
 
 .tarjetas:hover h3 {
@@ -376,21 +394,24 @@ p {
     justify-content: center;
     align-items: center;
     gap: 20px;
+   
 }
 
 .contendorImagenAvances{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
     align-items: center;
     min-width: 70%;
     max-width: 70%;
     min-height: 180px;
-    height: 150px;
+    height: 180px;
     border-radius: 10px;
     border: solid 5px #000000;
     box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
     transition: all 0.4s ease-in-out;
-    overflow: hidden;
+    overflow: hidden; /* 🔹 Evita que la imagen se salga del contenedor */
+    
 }
 
 .contendorImagenAvances img{
@@ -413,27 +434,38 @@ p {
     box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
     border: 5px solid #000000;
     background-color: #5b5b5b;
-    padding: 15px;
+    padding: 25px;
     transition: all 0.4s ease-in-out;
+
+     cursor: pointer;
 }
 
+.avances:hover {
+    border: solid 5px #43cd76;
+    box-shadow: 0 0 25px rgba(67, 205, 118, 0.7);
+    background-color: #000;
+    transform: translateY(-5px); /* Efecto de flotación */
+}
 
 .avances h3 {
     margin-top: 50px;
 }
 
-
-
-.planes {
-    display: flex;
+.avances:hover h3 {
+   color: #43cd76;
 }
+
+.avances:hover .contendorImagenAvances {
+    border: solid 5px #43cd76; 
+    box-shadow: 0 0 20px rgba(67, 205, 118, 0.7);
+}
+
 
 
 /* AQUI */
 
 #contacto {
     display: flex;
-    background: url('Contacto.jpg');
     overflow: auto;
     flex-wrap: wrap;
 }
@@ -441,31 +473,123 @@ p {
 .superContacto {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: row;
     width: 100%;
-
+    /* background: yellow; */
 }
 
 /* Contenedor del formulario */
 .form-container {
     /* margin: 180px 80px 30px; */
-    width: 100%;
+    width: 45%;
     /* Ocupa el 100% del ancho disponible. */
-    max-width: 500px;
+    /* max-width: 500px; */
     /* Limita el ancho máximo del formulario. */
-    max-height: 450px;
-    background-color: #ffffff;
+    /* max-height: 450px; */
+    background: #000000;
     /* Fondo blanco para contraste. */
-    padding: 20px;
+    padding: 30px;
     /* Espaciado interno del formulario. */
-    border-radius: 8px;
+    border-radius: 20px;
     /* Bordes redondeados para un diseño más agradable. */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #898989;
     /* Sombra para dar profundidad. */
-
+    box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
+    height: 100%;
+    transition: all 0.4s ease-in-out;
+    /* duración y tipo de transición */
 
 }
+
+.form-container:hover {
+    border: 2px solid #43cd76;
+    box-shadow: 0 0 15px rgba(67, 205, 118, 0.7);
+    transform: translateY(-10px); /* Efecto de flotación */
+}
+
+
+
+
+/* Título del formulario */
+.form-container h2 {
+    text-align: center;
+    /* Centra el texto del título. */
+    color: #088736;
+    /* Azul oscuro para resaltar. */
+    margin-bottom: 4%;
+    /* Espaciado inferior para separar del formulario. */
+
+}
+
+.form-container:hover h2 {
+    color: #43cd76;
+}
+
+/* Campos del formulario */
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor. */
+    padding: 35px;
+    /* Espaciado interno para comodidad al escribir. */
+    margin-bottom: 15px;
+    /* Borde gris claro. */
+    border-radius: 10px;
+    /* Bordes redondeados. */
+    font-size: 16px;
+    /* Tamaño de texto estándar. */
+    resize: vertical;
+    /* Permite redimensionar solo verticalmente (para textarea). */
+    background: #181818;
+    color: white;
+    border: 2px solid #5b5b5b;
+    box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
+}
+
+.form-container input:hover,
+.form-container textarea:hover {
+    border: 2px solid #43cd76;
+    box-shadow: 0 0 15px rgba(67, 205, 118, 0.7);
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border: 2px solid #43cd76;
+    box-shadow: 0 0 15px rgba(67, 205, 118, 0.7);
+    outline: none; /* elimina el borde azul predeterminado del navegador */
+}
+
+/* Botón de envío del formulario */
+.form-container button {
+    width: 100%;
+    /* Ocupa todo el ancho disponible. */
+    height: 60px;
+    padding: 10px;
+    /* Espaciado interno. */
+    background-color: #02733E;
+    /* Fondo azul oscuro. */
+    color: #000;
+    /* Texto blanco. */
+    font-size: 16px;
+    /* Tamaño del texto del botón. */
+    border: none;
+    /* Sin borde adicional. */
+    border-radius: 5px;
+    /* Bordes redondeados. */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón. */
+    transition: background-color 0.3s ease;
+    /* Transición suave al cambiar el color. */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.form-container button:hover {
+    background-color: #02a458;
+    color: white;
+    /* Azul más oscuro al pasar el cursor. */
+}
+
 
 .mapa {
     margin-top: 30px;
@@ -484,61 +608,8 @@ p {
 
 }
 
-/* Título del formulario */
-.form-container h2 {
-    text-align: center;
-    /* Centra el texto del título. */
-    color: #02733E;
-    /* Azul oscuro para resaltar. */
-    margin-bottom: 20px;
-    /* Espaciado inferior para separar del formulario. */
+/* AQUI */
 
-}
-
-/* Campos del formulario */
-.form-container input,
-.form-container textarea {
-    width: 100%;
-    /* Ocupa todo el ancho del contenedor. */
-    padding: 10px;
-    /* Espaciado interno para comodidad al escribir. */
-    margin-bottom: 15px;
-    /* Espaciado inferior entre los campos. */
-    border: 1px solid #ccc;
-    /* Borde gris claro. */
-    border-radius: 5px;
-    /* Bordes redondeados. */
-    font-size: 16px;
-    /* Tamaño de texto estándar. */
-}
-
-/* Botón de envío del formulario */
-.form-container button {
-    width: 100%;
-    /* Ocupa todo el ancho disponible. */
-    padding: 10px;
-    /* Espaciado interno. */
-    background-color: #02733E;
-    /* Fondo azul oscuro. */
-    color: #ffffff;
-    /* Texto blanco. */
-    font-size: 16px;
-    /* Tamaño del texto del botón. */
-    border: none;
-    /* Sin borde adicional. */
-    border-radius: 5px;
-    /* Bordes redondeados. */
-    cursor: pointer;
-    /* Cambia el cursor al pasar sobre el botón. */
-    transition: background-color 0.3s ease;
-    /* Transición suave al cambiar el color. */
-}
-
-/* Efecto al pasar el cursor sobre el botón */
-.form-container button:hover {
-    background-color: #43cd76;
-    /* Azul más oscuro al pasar el cursor. */
-}
 
 /* Pie de página */
 footer {
