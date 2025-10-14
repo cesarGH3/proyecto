@@ -37,7 +37,7 @@ header {
     /* Alinea verticalmente los elementos del encabezado. */
     z-index: 1000;
     /* Asegura que el encabezado esté siempre encima de otros elementos. */
-    border-bottom: 1px solid #5b5b5b;
+    border-bottom: 1px solid #c1c1c1;
 
 }
 
@@ -662,7 +662,25 @@ footer {
     /* Texto blanco. */
     font-size: 0.9em;
     /* Texto más pequeño para el pie. */
-    border: solid 5px #022601;
+    border-top: 1px solid #c1c1c1;
+    transition: all 0.6s ease-in-out;
+}
+
+footer:hover {
+    background-color: #000000;
+    border-top: 1px solid #43cd76;
+    box-shadow: 0 0 15px rgba(67, 205, 118, 0.7);
+}
+
+footer:hover a {
+    color: #43cd76;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 2s ease-in-out;
 }
 
 /* ========================
