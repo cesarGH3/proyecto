@@ -39,6 +39,8 @@ header {
     /* Asegura que el encabezado esté siempre encima de otros elementos. */
     border-bottom: 1px solid #c1c1c1;
 
+    transition: border-bottom 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+
 }
 
 nav {
@@ -125,6 +127,17 @@ header nav ul {
     width: 100%;
 }
 
+/* header:has(nav ul li a:hover) {
+    border-bottom: solid 2px #43cd76;
+    box-shadow: 0 0 15px rgba(67, 205, 118, 0.7);
+} */
+
+header:hover {
+    border-bottom: solid 2px #43cd76;
+    box-shadow: 0 0 15px rgba(67, 205, 118, 0.7);
+}
+
+/* AQUI */
 
 /* Espaciado superior para evitar solapamiento con el encabezado fijo */
 main {
