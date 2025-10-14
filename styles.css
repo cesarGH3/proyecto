@@ -182,37 +182,6 @@ section h2 {
     -webkit-text-fill-color: transparent;
 }
 
-.inicio h3,
-.inicio p {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-
-
-/* Animación del h3 */
-.mostrar-h3 {
-    animation: aparecerSuave 1.5s ease forwards;
-}
-
-/* Animación del párrafo */
-.mostrar-p {
-    animation: aparecerSuave 2s ease forwards;
-}
-
-
-@keyframes aparecerSuave {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .inicio {
     padding: 50px;
@@ -240,27 +209,8 @@ p {
     /* duración y tipo de transición */
     border: solid 5px #000000;
     box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
-
-    /* animación */
-    opacity: 0;
-    transform: translateY(10px);
 }
 
-.mostrar-img {
-    animation: aparecerSuaveImagen 1.5s ease forwards;
-}
-
-@keyframes aparecerSuaveImagen {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 #inicio:hover .contenedorImagen .ImagenInicio {
     border: solid 5px #43cd76;
@@ -301,10 +251,6 @@ p {
     overflow: hidden;
     /* evita que algo se salga */
     transition: all 0.4s ease-in-out;
-
-    /* animación
-    opacity: 0;
-    transform: translateY(10px); */
 }
 
 #imagenAvance {
@@ -316,14 +262,10 @@ p {
 }
 
 
-
-
 #sobre-nosotros:hover #contenedorImagenAvance {
     border: solid 5px #43cd76;
     box-shadow: 0 0 25px rgba(67, 205, 118, 0.7);
 }
-
-
 
 /* Div Imagen de sobre nosotros */
 #contenedorImagenNosotros {
@@ -347,21 +289,6 @@ p {
     border: solid 5px #43cd76;
     box-shadow: 0 0 25px rgba(67, 205, 118, 0.7);
 }
-
-/* Animaciones */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* AQUI */
 
@@ -392,9 +319,14 @@ p {
     max-width: 50%;
 
 }
+.tarjetas div h3 {
+    margin-bottom: 15px;
+    color: #000;
+    font-size: 1.5em;
+}
 
 .tarjetas {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(67, 205, 118, 0.3);
     border: 1px solid #cccccc7e;
     display: flex;
     width: 50%;
@@ -402,9 +334,37 @@ p {
     padding: 15px;
     align-items: center;
     margin: 15px;
-    border: solid 5px #022601;
-    background: #10AC6B;
+    border: solid 5px #000000;
+    background: #5b5b5b;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    gap: 20px;
 }
+
+
+/* Animaciones */
+.tarjetas:hover {
+    border: solid 5px #43cd76;
+    box-shadow: 0 0 25px rgba(67, 205, 118, 0.7);
+    background-color: #000;
+}
+
+.tarjetas:hover h3 {
+   color: #43cd76;
+}
+
+.tarjetas div img {
+    border-radius: 10px;
+    border: solid 2px #000000; 
+    box-shadow: 0 0 12px rgba(67, 205, 118, 0.3);
+}
+.tarjetas:hover div img {
+    border: solid 2px #43cd76; 
+    box-shadow: 0 0 20px rgba(67, 205, 118, 0.7);
+}
+
+
+/* AQUI */
 
 #precios {
     overflow: auto;
