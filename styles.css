@@ -748,93 +748,141 @@ footer a {
         display: flex;
         /* Se muestra cuando se activa */
     }
+    /* Seccion Inicio */
+    #inicio {
+        flex-direction: column;
+        padding: 20px;
+    }
+    #inicio h2 {
+        font-size: 2.5em;
+        margin: 10px 0;
+    }
+    /* Seccion sobre  */
+    #sobre-nosotros {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+
+    .nosotros {
+        width: 100%;
+        padding: 20px;
+    }
+    #contenedorImagenNosotros {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Seccion servicios */
+    .servicios2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjetas {
+        width: 80%;
+        flex-direction: column;
+    }
+
+
+    .tarjetas div {
+        max-width: 100%;
+    }
+
+
+    /* Seccion avances */
+    #contenedorSuperiorAvances {
+        flex-direction: column;
+    }
+    .avances {
+        width: 80%;
+        min-width: 80%;
+        margin: 20px 0;
+    }
+    .contendorImagenAvances {
+        max-width: 100%;
+        min-width: 100%;
+        height: auto;
+        min-height: auto;
+    }
+    /* Seccion contacto */
+    .superContacto {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+    }
+
+    .form-container h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        width: 80%;
+        max-width: 100%;
+        margin: 0;
+    }
+    .mapa {
+        width: 80%;
+        max-width: 100%;
+        height: 300px;
+    }
+
 
 }
 
 /* Para móviles y pantallas pequeñas */
 @media (max-width: 480px) {
 
-    #inicio {
-        flex-wrap: wrap;
-    }
-
-    #inicio h2 {
-        font-size: 2em;
-        margin: 2%;
-    }
-
-    #inicio h3 {
-        font-size: 1em;
-    }
-
-    .inicio img {
-        max-width: 100%;
-    }
-
-    .inicio {
-        margin: 0 0;
-    }
-
-    #sobre-nosotros {
-        flex-wrap: wrap;
-    }
-
-    .nosotros img {
-        max-width: 100%;
-    }
-
-    .tarjetas div {
-        min-width: 100%;
+    /* Servicios */
+    #servicios {
+        padding: 20px 15px;
     }
 
     .tarjetas {
-        min-width: 100%;
-        flex-wrap: wrap;
-        margin: 15px 0;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
     }
 
-    .servicios2 {
-        flex-wrap: wrap;
+    /* avances */
+    #avances {
+        padding: 20px 15px;
     }
-
-    .planes {
-        flex-wrap: wrap;
-    }
-
     .avances {
-        margin: 10px;
-    }
-
-    .avances img {
-        max-width: 70px;
-        margin-top: 0;
-    }
-
-    #contacto {
-        flex-wrap: wrap;
-    }
-
-    .mapa {
-        margin: 0px;
-        max-height: none;
-    }
-
-
-    .mapa iframe {
-        max-width: 300px;
-        max-height: 50%;
-    }
-
-    .form-container {
+        width: 100%;
+        min-width: 100%;
+        margin: 10px 0;
         padding: 15px;
-        /* Disminuye el espacio interno del formulario para que sea más compacto en móviles. */
+    }
+    .contendorImagenAvances {
         max-width: 100%;
-        /* Asegura que el formulario ocupe todo el ancho de la pantalla en móviles. */
-        margin: 20px 0;
+        min-width: 100%;
+        height: auto;
+        min-height: auto;
+    }
+    .contendorImagenAvances img {
+        height: auto;
+    }
+    /* Contacto */
+    #contacto {
+        padding: 20px 15px;
     }
 
-    footer {
-        font-size: 0.8em;
-        /* Reduce el tamaño del texto en el pie de página para pantallas pequeñas. */
+    
+    
+    .form-container {
+        padding: 20px;
+    }
+    .form-container input,
+    .form-container textarea {
+        padding: 20px;
+    }
+    .form-container button {
+        height: 50px;
+        font-size: 14px;
+    }
+    .mapa {
+        height: 250px;
     }
 }
